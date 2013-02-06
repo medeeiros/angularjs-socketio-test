@@ -1,0 +1,25 @@
+{
+  "name": "angularjs-socketio-test",
+  "version": "1.0.0",
+  "description": "testing Angular.js and Socket.io together",
+  "main": "server.js",
+  "dependencies": {
+    "connect": "~2.3.9",
+    "socket.io": "~0.9.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GuilhermeMedeiros/angularjs-socketio-test.git"
+  },
+  "keywords": [
+    "angularjs",
+    "socketio"
+  ],
+  "author": "Guilherme Medeiros",
+  "license": "BSD"
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Negócio Quente</title>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/ItemsController.js"></script>
+
+    <style>
+        h1 {
+            font-size: 50px;
+        }
+
+        .items li {
+            border-radius: 3px;
+            background: #eee;
+            padding: 10px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .items li.highlight {
+            -webkit-animation: highlight 900ms ease;
+        }
+
+        .items em {
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @-webkit-keyframes highlight {
+            from {
+                background: yellow;
+            }
+
+            to {
+                background: #eee;
+            }
+        }
+
+
+        #form-adicionar-novo {
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" ng-controller="ItemsController">
+        <div class="row">
+
+            <div class="span8">
+                <h3>Negócio quente</h3>
+
+                <ul class="items unstyled">
+                    <li ng-repeat="item in items | orderBy:[0]:true" ng-class="{highlight: item.highlight}"><em>{{item.nome}}</em> está procurando {{item.procura}} <em>por</em> R$ {{item.valor}}</li>
+                </ul>
+            </div>
+
+            <div class="span4">
+                <form id="form-adicionar-novo" ng-submit="criar()">
+                    <fieldset>
+                        <legend>Adicionar Novo</legend>
+
+                        <label>Nome</label>
+                        <input type="text" ng-model="novo.nome">
+
+                        <label>Procurando</label>
+                        <textarea ng-model="novo.procura"></textarea>
+
+                        <label>Valor</label>
+                        <input type="text" placeholder="R$" ng-model="novo.valor">
+
+
+                        <div>
+                            <button class="btn btn-success" type="submit">enviar</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
