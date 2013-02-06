@@ -21,5 +21,9 @@
     "socketio"
   ],
   "author": "Guilherme Medeiros",
-  "license": "BSD"
+  "license": "BSD",
+  "subdomain": "negocioquente",
+  "engines": {
+    "node": "0.6.x"
+  }
 }
